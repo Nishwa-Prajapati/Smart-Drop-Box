@@ -1,1 +1,441 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url('/images/wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: hard-light;
+    min-height: 100vh;
+    /* background: linear-gradient(to right, #649aa4, #1a6f81);
+    overflow: hidden; */
+    
+}
+
+#home-icon img{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    cursor: pointer;
+}
+
+#form-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height:475px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    background-image: url('/images/delivery.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    background-blend-mode:hard-light;
+
+    overflow-y: auto;  
+}
+
+#form-container h2{
+    font-family: 'PT Serif', serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#login-form{
+    margin:50px;
+}
+
+
+input {
+    width: 60%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    width: 40%;
+    padding: 10px;
+    margin:20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+input:focus, button:hover {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+}
+
+#login-btn {
+    width:30%;
+    background-color: #007bff;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+}
+
+#signup-btn {
+    background-color: #28a745;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+}
+
+button:hover {
+    opacity: 0.8;
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+p {
+    margin-top: 10px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#signup-form {
+    display: none;
+}
+
+#new-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height:450px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    visibility:hidden;
+}
+
+#new-container.show {
+    visibility:visible;
+    background: rgba(255, 255, 255,0.6);
+    background-image: url('/images/parcel.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 250px;
+    background-blend-mode:darken;
+}
+
+#form-container.hide{
+    visibility:hidden;
+    opacity:1;
+}
+
+.previous-icon img{
+    width:10%;
+    height:10%;
+    float:left;
+    margin:10px 0px 0px 20px;
+}
+
+#new-container-inner{
+    margin:80px 0px 0px 0px;
+}
+
+#set-order-btn{
+    display:block;
+    margin: 100px 0px 0px 135px;
+    background-color: rgb(49, 84, 224);
+    font-weight: bolder;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+}
+
+#check-status-btn{
+    background-color: rgb(224, 136, 49);
+    margin:40px 0px 0px 0px;
+    font-weight: bolder;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+}
+
+#new-container.hide{
+    visibility:hidden;
+    opacity:1;
+}
+
+#setOrderPage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height:450px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    visibility:hidden;
+}
+
+#setOrderPage h2{
+    font-family: 'PT Serif', serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#checkStatusPage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    min-height: 490px; /* Ensures a base height */
+    height: auto;       /* Allows to grow with content */
+    max-height: 90vh;   /* Optional: to restrict it if content gets too long */
+    overflow-y: auto;   /* Enables scroll if needed */
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    visibility:hidden;
+    transition: height 0.4s ease;
+}
+
+#checkStatusPage h2{
+    font-family: 'PT Serif', serif;
+    font-size: 40px;
+    font-weight: bold;
+    margin:50px 30px 0px 20px;
+}
+
+#checkStatusPage p{
+    font-size: 14px;
+    margin: 30px 0px 0px 0px;
+}
+
+
+/* new  */
+#orderInput {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#fetchStatusBtn {
+    background-color: #28a745;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#statusMessage {
+    font-size: 16px;
+    color: red;
+    margin-top: 10px;
+}
+
+#imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#parcelImage {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.result-image {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+  }
+
+#setOrderPage.show{
+    visibility:visible;
+    opacity:1;
+    background-image: url('/images/order.png');
+    background-repeat: no-repeat;
+    background-position: 0px 240px;
+    background-size: contain;
+    background-blend-mode:hard-light;
+}
+
+#checkStatusPage.show{
+    visibility:visible;
+    opacity:1;
+    padding-bottom: 60px;
+    background-image: url('/images/checkstatus.png');
+    background-repeat: no-repeat;
+    background-position: 125px 444px;
+    background-size: 320px;
+    background-blend-mode: darken;
+}
+
+#setOrderPage h2{
+    margin:70px 20px 0px 0px;
+}
+
+#orderId{
+    margin:40px 0px 0px 0px;
+}
+
+#blue-btn{
+    font-family: 'Rajdhani', sans-serif;
+    width:40%;
+    color:#ffffff;
+    background-color: #3f8de0;
+    font-weight: bold;
+    margin:50px 0px 0px 0px;
+    padding:10px;
+    border:none;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    #form-container {
+        position: absolute;
+        top: 50%;
+        margin: 0px 15px 0px 5px;
+        width: 300px;
+        height:440px;
+        padding: 10px;
+    }
+
+    #form-container h2{
+        font-size: 30px;
+    }
+
+    #login-btn{
+        width:40%;
+        font-size:15px;
+    }
+
+    input{
+        width:85%;
+    }
+
+    #new-container.show{
+        background-size: 240px;
+        background-position: bottom;
+    }
+
+    .previous-icon img{
+        width:10%;
+        height:10%;
+        margin:15px 5px 0px 10px;
+    }
+
+    #setOrderPage.show {
+        width: 320px;
+        height: 440px;
+        padding: 20px;
+        background-position: 50px 300px;
+        background-size: 250px;
+    }
+    
+    #setOrderPage h2 {
+        font-size: 28px;
+        margin: 60px 0px 0px 0px;
+    }
+    
+    #orderId {
+        margin-top: 30px;
+    }
+    
+    #blue-btn {
+        width: 60%;
+        font-size: 15px;
+        margin-top: 30px;
+        padding: 8px;
+    }
+
+    #checkStatusPage {
+        width: 90%;
+        height: 90%;
+        padding: 20px;
+    }
+
+    #checkStatusPage h2 {
+        font-size: 24px;
+        margin: 40px 20px 10px 0px;
+    }
+
+    #checkStatusPage p {
+        font-size: 14px;
+        margin: 20px 0px;
+    }
+
+    #orderInput {
+        width: 90%;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #fetchStatusBtn {
+        width: 60%;
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    #statusMessage {
+        font-size: 14px;
+    }
+
+    #parcelImage {
+        max-width: 90%;
+    }
+
+    #checkStatusPage.show {
+        background-size: 300px;
+        background-position: center bottom;
+    }
+}
+
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none; /* Initially hidden */
+}
 
