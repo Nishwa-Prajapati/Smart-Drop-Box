@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
 
+    <link href="/styles/aauserpage.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <a href="aafirstpage.html" id="home-icon">
+        <img src="/images/house.png" alt="home-icon">
+    </a>
+
+    <!-- Main Form Container -->
+    <div id="form-container">
+        
+        <!-- LOGIN FORM (Default Visible) -->
+        <div id="login-form">
+            <h2>User Login</h2>
+
+            <input type="text" id="login-userid" placeholder="Enter User ID" required autocomplete="off">
+            <p class="error" id="loginUserIdError"></p>
+
+            <input type="password" id="login-password" placeholder="Enter Password" required autocomplete="new-password">
+            <p class="error" id="loginPasswordError"></p>
+
+            <button id="login-btn">Login</button>
+            <p><a href="#" id="show-signup">Don’t have an account?</a></p>
+        </div>
+
+        <!-- SIGNUP FORM (Hidden Initially) -->
+        <div id="signup-form">
+            <h2>Sign Up</h2>
+
+            <input type="text" id="fullname" placeholder="Full Name" required autocomplete="off">
+            <p class="error" id="nameError"></p>
+
+            <input type="tel" id="phone" placeholder="Phone Number" required autocomplete="off">
+            <p class="error" id="phoneError"></p>
+
+            <input type="text" id="userid" placeholder="Create User ID" required autocomplete="off">
+            <p class="error" id="userIdError"></p>
+
+            <input type="password" id="password" placeholder="Create Password" required autocomplete="new-password">
+            <p class="error" id="passwordError"></p>
+
+            <button id="signup-btn">Sign Up</button>
+            <p><a href="#" id="show-login">Already have an account? Login</a></p>
+        </div>
+
+       <!-- New Container (Initially Hidden) -->
+    <div id="new-container">
+        <div class="previous-icon">
+            <a href="#" id="form-page-icon">
+                <img src="/images/left-arrow.png" alt="Previous">
+            </a>
+        </div>
+
+        <div id="new-container-inner">
+            <button id="set-order-btn">Set Order ID</button>
+            <button id="check-status-btn">Check Parcel Status</button>
+        </div>
+    </div>
+
+     <!-- Set Order ID Page -->
+     <div id="setOrderPage" class="container-hidden">
+        <div class="previous-icon">
+            <a href="#" id="backto-newcontainer-page-icon">
+                <img src="/images/left-arrow.png" alt="Previous">
+            </a>
+        </div>
+        <h2>Set Order ID</h2>
+        <input type="text" id="orderId" placeholder="Enter Order ID" autocomplete="off">
+        <button type="submit" id="blue-btn">Submit</button>
+    </div>
+
+    <!-- Check Status Page -->
+    <div id="checkStatusPage" class="container-hidden">
+        <div class="previous-icon">
+            <a href="#" id="newcontainer-page-icon">
+                <img src="/images/left-arrow.png" alt="Previous">
+            </a>
+        </div>
+        <h2>Check Parcel Status</h2>
+        <input type="text" id="orderInput" placeholder="Enter Order ID">
+        <button id="fetchStatusBtn">Check Status</button>
+    
+        <p id="statusMessage"></p> <!-- Status messages (e.g., loading, not found) -->
+         <!-- 🎉 Celebration Message -->
+        <div id="celebrationMessage" style="display: none; font-size: 18px; color: green; font-weight: bold;">
+            🎉 Delivered Successfully!
+        </div>
+    
+        <div id="imageContainer">
+            <img id="parcelImage" class="result-image" src="" alt="Parcel Image" style="display: none; width: 200px; height: auto;">
+            <p id="parcelMessage" style="display: none; font-size: 18px; font-weight: bold; color: #555; margin-top: 10px;"></p>
+        </div>
+    </div>
+
+    <script src="/scripts/aauserpage.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
