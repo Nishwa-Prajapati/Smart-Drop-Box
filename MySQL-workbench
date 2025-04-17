@@ -1,1 +1,56 @@
+CREATE DATABASE final_project_db;
+USE final_project_db;
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    mobile_number VARCHAR(15) NOT NULL,
+    user_id VARCHAR(255) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL
+);
+
+
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(255) NOT NULL,
+    order_id VARCHAR(255) NOT NULL, 
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+ALTER TABLE orders MODIFY COLUMN parcel_image LONGBLOB;
+
+CREATE TABLE delivery_guys (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(100),
+    agency_name VARCHAR(100),
+    order_id VARCHAR(50),
+    mobile_number VARCHAR(15)
+);
+
+ALTER TABLE delivery_guys ADD COLUMN match_status VARCHAR(20);
+
+
+CREATE TABLE otps (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    otp VARCHAR(6) NOT NULL,
+    expiry_time DATETIME NOT NULL,
+    delivery_guy_id INT NOT NULL,
+    order_id VARCHAR(255) NOT NULL,
+    FOREIGN KEY (delivery_guy_id) REFERENCES delivery_guys(id) ON DELETE CASCADE
+);
+
+ALTER TABLE otps
+ADD COLUMN email VARCHAR(255) NOT NULL AFTER order_id;
+
+ALTER TABLE otps
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP AFTER otp;
+
+SHOW DATABASES;
+SHOW TABLES;
+SELECT * FROM users;
+
+SELECT * FROM orders;
+
+SELECT * FROM delivery_guys;
+
+SELECT * FROM otps;
 
