@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery information</title>
+    <link href="/styles/aadeliverypage.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Serif&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main-body">
+        <nav> 
+            <a href="aafirstpage.html"> 
+                <img src="/images/house.png" alt="home-icon">
+            </a>
+        </nav>
+    <main>
 
+                      <!-- Video Container for Better UI -->
+<div class="video-container">
+    <video id="camera-preview" autoplay></video>
+    <canvas id="captured-image" style="display: none;"></canvas>
+    <img id="image-preview" src="" alt="Captured Image" style="display: none;">
+    <button id="capture-btn">Capture Image</button>
+</div>
+<input type="hidden" id="image-data" name="image-data">
+
+        <div id="main-container">
+            <h2 class="form-heading">Delivery Access</h2>
+            <p class="form-subtext">Enter your details and Order ID to get OTP access.</p>
+            <div id="form-container">
+                    <form action="" method="" target="_blank">
+
+                    
+                        <input type="text" id="fname"  name="fname" placeholder="Full name" autofocus autocomplete="off" required>
+                        <span id="nameError" class="error-message"></span>
+
+                    
+                        <input type="text" id="agencyname"  placeholder="Agency name" name="agencyname" required autocomplete="off">
+                        <span id="agencyError" class="error-message"></span>
+                   
+                        <input type="text" id="orderid" placeholder="Order ID" name="orderid" required autocomplete="off">
+                    
+                        <input type="number" id="mobileno" placeholder="Mobile number" name="mobileno" required autocomplete="off">
+                        <span id="mobileError" class="error-message"></span>
+
+                        <input type="email" id="email" name="email" placeholder="Enter Email" required autocomplete="off">
+                        <span id="emailError" class="error-message"></span>
+
+                        <div class="button-container">
+                            <input type="button" id="get-otp" value="Get OTP">
+                            <input type="button" id="done-btn" value="Done">
+                            <div> <p id="timer"></p>  </div>
+                        </div>
+
+                    </form>
+
+            </div>
+        </div>
+    </main>
+    </div>
+
+    <script src="/scripts/aadeliverypage.js"> </script>
+
+</body>
+</html>
