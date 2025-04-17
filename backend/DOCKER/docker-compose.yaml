@@ -1,1 +1,38 @@
+services:
+  dropbox:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: dropbox-app
+    ports:
+      - "5001:5001"
+    command: ["./wait-for-it.sh", "mysql:3306", "--", "npm", "start"]
+    environment:
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: **my_password**
+      DB_NAME: final_project_db
+    depends_on:
+      mysql:
+        condition: service_healthy  # Wait until MySQL is ready
+    restart: unless-stopped
 
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: **my_password**
+      MYSQL_DATABASE: final_project_db
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:  # Added health check
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  mysql-data:
